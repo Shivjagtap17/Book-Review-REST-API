@@ -26,7 +26,7 @@ A RESTful API built using Node.js, Express, and MySQL for managing books and use
 
 4. **Set up database and tables**
 
-  node db.js  
+    node db.js  
 
 5. **Start the server**
 
@@ -89,12 +89,19 @@ A RESTful API built using Node.js, Express, and MySQL for managing books and use
 
    .
 ├── controllers/
+
 ├── routes/
+
 ├── middlewares/
+
 ├── models/
+
 ├── db.js
+
 ├── index.js
+
 ├── .env
+
 └── README.md
 
 
