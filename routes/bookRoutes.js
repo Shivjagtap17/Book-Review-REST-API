@@ -1,8 +1,15 @@
 // Append this in bookRoutes.js:
 const pool = require('../models/db');
 const express = require('express');
+const { addNewBook, listBooks, getBookDetails } = require('../controllers/bookController');
+const { submitReview } = require('../controllers/reviewController');
+const { authenticateToken } = require('../middlewares/authMiddleware');
 const router = express.Router();
 
+router.post('/books', authenticateToken, addNewBook);
+router.get('/books', listBooks);
+router.get('/books/:id', getBookDetails);
+router.post('/books/:id/reviews', authenticateToken, submitReview);
 router.get('/search', async (req, res) => {
   try {
     const { q } = req.query;
