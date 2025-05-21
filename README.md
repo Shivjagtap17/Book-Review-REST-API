@@ -70,7 +70,7 @@ A RESTful API built using Node.js, Express, and MySQL for managing books and use
 
 ## 💡 Design Decisions & Assumptions
 
-    🔒 JWT-based stateless authentication
+   🔒 JWT-based stateless authentication
    
    🧑 One review per user per book (enforced via unique constraint)
    
@@ -87,7 +87,7 @@ A RESTful API built using Node.js, Express, and MySQL for managing books and use
 
 ## 📂 Folder Structure
 
-   .
+
 ├── controllers/
 
 ├── routes/
