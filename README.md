@@ -32,12 +32,75 @@ A RESTful API built using Node.js, Express, and MySQL for managing books and use
 
    node index.js  
 
-6. **🖥️ How to Run Locally**
+ ## 🖥️ How to Run Locally
    
   . Ensure MySQL server is running
+  
   . Run node db.js once to create the database and tables
+  
   . Start the API with node index.js
+  
   . Test using Postman or curl at: http://localhost:3000
+
+
+## 🔌 Example API Requests
+
+✅ **User Signup**
+   curl -X POST http://localhost:3000/api/signup \  
+   -H "Content-Type: application/json" \  
+   -d '{"username":"john", "password":"pass123"}'  
+
+✅ **User Login**
+   curl -X POST http://localhost:3000/api/login \  
+   -H "Content-Type: application/json" \  
+   -d '{"username":"john", "password":"pass123"}'  
+
+✅ **Add a Book**
+   curl -X POST http://localhost:3000/api/books \  
+   -H "Authorization: Bearer <TOKEN>" \  
+   -H "Content-Type: application/json" \  
+   -d '{"title":"Book Title", "author":"Author", "genre":"Genre"}'  
+
+✅ **Submit a Review**
+   curl -X POST http://localhost:3000/api/books/1/reviews \  
+   -H "Authorization: Bearer <TOKEN>" \  
+   -H "Content-Type: application/json" \  
+   -d '{"rating":5, "comment":"Great read!"}'  
+
+
+## 💡 Design Decisions & Assumptions
+
+    🔒 JWT-based stateless authentication
+   
+   🧑 One review per user per book (enforced via unique constraint)
+   
+   🔄 Users can update or delete only their own reviews
+   
+   📚 Search by title or author supports partial/case-insensitive matching
+   
+   📖 Books and reviews include pagination for scalability
+   
+   📁 Project follows modular MVC structure for maintainability
+   
+   🛡️ Passwords are securely hashed using bcrypt
+
+
+## 📂 Folder Structure
+
+   .
+├── controllers/
+├── routes/
+├── middlewares/
+├── models/
+├── db.js
+├── index.js
+├── .env
+└── README.md
+
+
+
+
+
 
 
    
